@@ -60,12 +60,12 @@ namespace :assets do
     puts "Linking frontend plugins"
     Rake::Task['openproject:plugins:register_frontend'].invoke
 
-    puts "Building angular frontend"
-    Dir.chdir Rails.root.join('frontend') do
-      sh 'npm run build' do |ok, res|
-        raise "Failed to compile angular frontend: #{res.exitstatus}" if !ok
-      end
-    end
+    #puts "Building angular frontend"
+    #Dir.chdir Rails.root.join('frontend') do
+    #  sh 'npm run build' do |ok, res|
+    #    raise "Failed to compile angular frontend: #{res.exitstatus}" if !ok
+    #  end
+    #end
 
     puts "Writing angular assets manifest"
     OpenProject::Assets.rebuild_manifest!
