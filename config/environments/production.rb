@@ -55,6 +55,7 @@ OpenProject::Application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+config.assets.initialize_on_precompile = false
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = nil
   # config.assets.css_compressor = :sass
